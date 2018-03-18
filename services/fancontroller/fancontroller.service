@@ -1,0 +1,8 @@
+[Unit]
+Description=Fan Controller
+
+[Service]
+ExecStart=/home/mazhlekov/provisioning/services/fancontroller/fancontroller.sh
+
+[Install]
+WantedBy=multi-user.target
