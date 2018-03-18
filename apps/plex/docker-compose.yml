@@ -1,0 +1,20 @@
+version: '3.5' 
+services:
+    plex:
+        container_name: plex
+        image: plexinc/pms-docker
+        restart: unless-stopped
+        network_mode: host
+        ports:
+          - "80:32400"
+        volumes:
+          - /etc/localtime:/etc/localtime:ro
+          - /home/mazhlekov/plugins/plex/config:/config
+          - /home/mazhlekov/plugins/plex/data:/data
+          - /mnt/wd/music:/data/music:shared
+          - /mnt/wd/video:/data/video:shared
+        environment:
+          #- PLEX_USERNAME=username - PLEX_PASSWORD=password - PLEX_TOKEN=token
+          - TZ=Europe/Sofia
+          - PLEX_UID=0
+          - PLEX_GID=0
