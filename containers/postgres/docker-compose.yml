@@ -1,0 +1,11 @@
+version: '3.5' 
+services:
+    postgres:
+        container_name: postgres
+        image: postgres
+        restart: unless-stopped
+        network_mode: host
+        volumes:
+          - /home/mazhlekov/containers/postgres/data:/var/lib/postgresql/data
+        environment:
+          - POSTGRES_PASSWORD=mysecretpassword
