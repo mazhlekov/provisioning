@@ -9,8 +9,8 @@ services:
           - "80:32400"
         volumes:
           - /etc/localtime:/etc/localtime:ro
-          - /home/mazhlekov/plugins/plex/config:/config
-          - /home/mazhlekov/plugins/plex/data:/data
+          - /home/mazhlekov/containers/plex/config:/config
+          - /home/mazhlekov/containers/plex/data:/data
           - /mnt/wd/music:/data/music:shared
           - /mnt/wd/video:/data/video:shared
         environment:
